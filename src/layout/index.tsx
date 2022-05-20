@@ -1,5 +1,3 @@
-// import Footer from '@shared/Footer';
-// import Header from '@shared/Header';
 import React from 'react';
 import GlobalStyle from './globalStyles';
 import Head from './Head';
@@ -13,9 +11,7 @@ const Layout: React.FC<Props> = ({ children }) => (
   <>
     <Head />
     <GlobalStyle />
-    {/* <Header /> */}
     <ContentWrapper>{children}</ContentWrapper>
-    {/* <Footer /> */}
   </>
 );
 

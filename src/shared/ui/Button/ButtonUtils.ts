@@ -111,7 +111,6 @@ export const getBackgrounds = (
     ${pulsating && pulse('#1da1f1')}
   `,
   text: css`
-    background: transparent;
     color: ${theme.colors.gray};
     border: none;
 
@@ -148,11 +147,9 @@ export const getBackgrounds = (
   googleBordered: css`
     border: 1px solid #ea4335;
     color: #ea4335;
-    background: transparent;
   `,
   facebookBordered: css`
     border: 1px solid #1877f2;
     color: #1877f2;
-    background: transparent;
   `,
 });

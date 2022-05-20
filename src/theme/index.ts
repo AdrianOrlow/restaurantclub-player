@@ -3,24 +3,19 @@ import breakpoints from './breakpoints';
 
 const theme: DefaultTheme = {
   fontFamily: {
-    primary: 'FONT',
+    primary: 'SourceSansPro',
   },
   fontWeight: {
     primary: {
-      light: 300,
-      medium: 500,
+      regular: 400,
       bold: 700,
     },
   },
   colors: {
-    primary: '#000',
-    primarySubtle: '#000',
-    primaryAccent: '#000',
-    light: '#000',
-    black: '#000',
-    gray: '#000',
-    red: '#000',
-    green: '#000',
+    primary: '#0FD65A',
+    light: '#FFFFFF',
+    black: '#1B1B1B',
+    gray: '#9A9B9B',
   },
   breakpoints,
 };

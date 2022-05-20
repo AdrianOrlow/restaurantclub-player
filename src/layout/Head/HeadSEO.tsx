@@ -7,8 +7,8 @@ const HeadSEO: React.FC = () => {
   const url = useCanonicalUrl();
 
   const { title, description, locale } = {
-    title: 'PAGE_TITLE',
-    description: 'PAGE_DESCRIPTION',
+    title: 'Player APP',
+    description: 'Player APP',
     locale: 'pl_PL',
   };
 

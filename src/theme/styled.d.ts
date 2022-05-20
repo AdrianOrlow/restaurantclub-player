@@ -3,15 +3,19 @@ import breakpoints from './breakpoints';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    fontFamily: Record<'primary', 'FONT' | 'FONT2'>;
+    fontFamily: Record<'primary', 'SourceSansPro'>;
     fontWeight: {
       primary: {
-        light: number;
-        medium: number;
+        regular: number;
         bold: number;
       };
     };
-    colors: Record<string, string>;
+    colors: {
+      primary: string;
+      light: string;
+      black: string;
+      gray: string;
+    };
     breakpoints: typeof breakpoints;
   }
 }

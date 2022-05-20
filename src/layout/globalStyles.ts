@@ -21,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${({ theme }) => theme.fontFamily.primary}, sans-serif;
-    background: ${({ theme }) => theme.colors.light};
+    background: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.gray};
     font-weight: ${({ theme }) => theme.fontWeight.primary.medium};
     line-height: normal;
@@ -50,6 +50,12 @@ const GlobalStyle = createGlobalStyle`
     ${breakpoint('xl')`
       margin: auto;
     `};
+  }
+
+  button {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
   }
 `;
 
