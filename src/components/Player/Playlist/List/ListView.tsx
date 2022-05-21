@@ -1,6 +1,7 @@
 import BackIcon from '@assets/icons/back_ico.svg';
 import { Player } from '@components/Player/utils/hooks/usePlayer';
 import { Album } from '@data/music';
+import Button from '@shared/ui/Button';
 import PlayButton from '@shared/ui/PlayButton';
 import * as React from 'react';
 import Song from '../Song';
@@ -51,6 +52,7 @@ const List: React.FC<Props> = ({ show, album, onClose, player }) => {
           ))}
         </ListWrapper>
         <Actions>
+          <Button color="green">shuffle play</Button>
           <HideButton onClick={onClose}>
             <BackIcon />
           </HideButton>

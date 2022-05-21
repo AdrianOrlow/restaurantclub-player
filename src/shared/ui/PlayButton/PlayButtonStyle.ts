@@ -10,12 +10,11 @@ export const Container = styled.button<{
   background-image: url(${require('@assets/icons/Play_inactive.png')});
   background-position: center;
   background-repeat: no-repeat;
-  width: 155px;
-  width: ${({ size = 'big' }) => (size === 'big' ? '155' : 155 / 2)}px;
-  height: ${({ size = 'big' }) => (size === 'big' ? '165' : 165 / 2)}px;
+  width: ${({ size }) => (size === 'big' ? '148' : 148 / 2)}px;
+  height: ${({ size }) => (size === 'big' ? '165' : 165 / 2)}px;
+  ${({ size }) => size === 'small' && `background-size: contain;`};
   position: relative;
   cursor: pointer;
-  background-size: contain;
   background-repeat: no-repeat;
 
   &::after {
@@ -34,12 +33,12 @@ export const Container = styled.button<{
     transition: 0.2s ease-in-out;
     pointer-events: none;
 
-    /* ${({ size }) =>
+    ${({ size }) =>
       size === 'small' &&
       `
       transform: scale(0.5);
       left: -7.5rem;
       top: -7.5rem;
-    `} */
+    `}
   }
 `;

@@ -1,17 +1,6 @@
 import { SubTitle, Title } from '@shared/Typography';
-import styled from 'styled-components';
-
-export const Wrapper = styled.div<{ show: boolean }>`
-  position: absolute;
-  bottom: ${({ show }) => (show ? '0' : '-100%')};
-  opacity: ${({ show }) => (show ? '1' : '0')};
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: all 1s ease-in-out;
-  z-index: 100;
-`;
+import { spacingY } from '@utils/stylesUtils';
+import styled, { css } from 'styled-components';
 
 export const Header = styled.div`
   display: flex;
@@ -49,6 +38,7 @@ export const Inner = styled.div`
   padding: 3rem;
   height: 100%;
   background: ${({ theme }) => theme.colors.light};
+  overflow: auto;
 `;
 
 export const ListWrapper = styled.ol`
@@ -71,11 +61,48 @@ export const HideButton = styled.button`
   width: 100%;
 
   svg {
-    transform: rotate(90deg);
+    transform: rotate(270deg);
+    height: 32px;
   }
 `;
 
 export const Actions = styled.div`
+  padding: 2rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 33%;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.1)
+  );
+  ${spacingY(1)};
+  transition: all 1s ease-in-out;
+`;
+
+export const Wrapper = styled.div<{ show: boolean }>`
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 1s ease-in-out;
+  z-index: 100;
+
+  ${({ show }) => !show && `pointer-events: none;`};
+
+  ${({ show }) =>
+    css`
+      &,
+      ${Actions} {
+        bottom: ${show ? '0' : '-100%'};
+        opacity: ${show ? '1' : '0'};
+      }
+    `};
 `;

@@ -1,27 +1,10 @@
-import { Spinner } from '@shared/ui/Loading';
-import * as R from 'ramda';
 import React from 'react';
-import { useTheme } from 'styled-components';
-import { Container, IconWrapper } from './ButtonStyle';
+import { Container } from './ButtonStyle';
 import { ButtonProps } from './ButtonTypes';
 
-const Button: React.FC<ButtonProps> = ({
-  beforeIcon,
-  children,
-  loading,
-  background,
-  ...props
-}) => {
-  const theme = useTheme();
-  const spinnerColor = R.cond([[R.T, R.always(theme.colors.light)]])(
-    background
-  );
-  const showIcon = loading || beforeIcon;
-  const icon = loading ? <Spinner color={spinnerColor} /> : beforeIcon;
-
+const Button: React.FC<ButtonProps> = ({ children, background, ...props }) => {
   return (
-    <Container {...props} background={background} disabled={loading}>
-      {showIcon && <IconWrapper>{icon}</IconWrapper>}
+    <Container {...props} background={background}>
       {children && <span>{children}</span>}
     </Container>
   );
@@ -29,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
 
 Button.defaultProps = {
   size: 'middle',
-  background: 'violet',
+  background: 'green',
 };
 
 export default Button;

@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { StyleProps } from "./ButtonTypes";
-import { getBackgrounds, sizes } from "./ButtonUtils";
+import styled from 'styled-components';
+import { StyleProps } from './ButtonTypes';
+import { getBackgrounds, sizes } from './ButtonUtils';
 
 export const IconWrapper = styled.span`
   display: flex;
@@ -23,11 +23,11 @@ export const Container = styled.button<StyleProps>`
   justify-content: center;
   align-items: center;
   font-weight: ${({ theme }) => theme.fontWeight.primary.bold};
-  font-family: ${({ theme }) => theme.fontFamily.primary};
+  text-transform: uppercase;
   border: 0;
   cursor: pointer;
   transition: background 0.2s ease-in-out;
-  width: ${({ isFullWidth }) => (isFullWidth ? "100%" : "auto")};
+  width: ${({ isFullWidth }) => (isFullWidth ? '100%' : 'auto')};
   white-space: nowrap;
   line-height: 100%;
   border-radius: 10rem;
@@ -44,8 +44,8 @@ export const Container = styled.button<StyleProps>`
 
   ${({ size }) => sizes[size]}
 
-  ${({ background, theme, pulsating }) => {
-    const backgrounds = getBackgrounds(theme, { pulsating });
+  ${({ background, theme }) => {
+    const backgrounds = getBackgrounds(theme);
     return backgrounds[background];
   }}
 `;
