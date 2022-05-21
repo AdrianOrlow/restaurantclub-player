@@ -23,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${({ theme }) => theme.fontFamily.primary}, sans-serif;
     background: ${({ theme }) => theme.colors.black};
     color: ${({ theme }) => theme.colors.gray};
-    font-weight: ${({ theme }) => theme.fontWeight.primary.medium};
+    font-weight: ${({ theme }) => theme.fontWeight.primary.regular};
     line-height: normal;
   }
   
